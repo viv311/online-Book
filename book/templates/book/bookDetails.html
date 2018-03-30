@@ -1,0 +1,16 @@
+{% extends "personal/header.html" %}
+{% block content %}
+	
+	<h1>{{ book.book_name }}</h1>
+	<hr size="10" noshade>
+	{% for auther in book.auther_set.all %}
+		<center>
+		<img src="{{auther.auther_img.url}}" class="responsive-img" style='max-height:200px; border:5px groove black;' alt="face" border="50">
+		
+		<h2><li>{{auther.auther_name}}</li></h2>
+		<h2><a class="nav-link" href="{{auther.auther_img.url}}">Read Online</a></h2>
+		<h2><a class="nav-link" href="#">Buy:-{{auther.auther_book_price}}Rs</a><h2>
+		</center>
+		<hr size="10" noshade>
+	{% endfor %}
+{% endblock %}

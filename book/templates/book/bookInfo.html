@@ -1,0 +1,9 @@
+{% extends "personal/header.html" %}
+{% block content %}
+<ul>
+	<h1>Subject List:-<h1>
+	{% for book in all_books %}
+	<h6><li><a href="/book/{{ book.id }}/">{{ book.book_name }}</a></li></h6>
+	{% endfor %}
+</ul>
+{% endblock %}
